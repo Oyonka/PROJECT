@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<title>]about</title>
+<style>
+body {
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+height: 100vh;
+}
+
+.main {
+width: 100%;
+}
+
+nav {
+width: 100%;
+background-color: #1A2421;
+height: 60px;
+line-height: 70px;
+display: flex;
+justify-content: space-between;
+}
+.logo a{
+font-size: 30px;
+color: salmon;
+font-family: cursive;
+font-weight: bold;
+}
+a{
+text-decoration: none;
+color: mistyrose;
+font-family: copperplate;
+font-size: 17px;
+transition: 0.5s all ease;
+}
+ul{
+margin: 0px;
+}
+ul li{
+float: left;
+padding: 0px 10px;
+list-style: none;
+}
+ul li a:hover {
+color: salmon;
+}
+
+.header {
+background-color: oldlace;
+background-position: center;
+background-size: cover;
+background-repeat: no repeat;
+height: 100vh;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+footer{
+    background: #1A2421;
+    text-align: center;
+    padding: 1em;
+font-style: italic;
+font-weight: bold;
+font-family: monospace;
+color: mistyrose;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+}
+</style>
+</head>
+<body>
+<div class="main">
+ <div class="wrapper">
+  <div class="header">
+    <nav>
+     <div class="logo">
+       <a href="">BOKE BITES</a>
+     </div>
+     <ul>
+      <li><a href="C:\Users\To\Desktop\PROJECT\home.HTML">HOME</a></li>
+      <li><a href="C:\Users\To\Desktop\PROJECT\about.html">ABOUT</a></li>
+      <li><a href="C:\Users\To\Desktop\PROJECT\blog.html">BLOG</a></li>
+      <li><a href="C:\Users\To\Desktop\PROJECT\services.html">SERVICES</a></li>
+      <li><a href="C:\Users\To\Desktop\PROJECT\contact.html">CONTACT</a></li>
+     </ul>
+    </nav>
+<div class="container">
+  <div style="text-align:center">
+    <h>Contact Us</h>
+    <p>Leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="https://media.gettyimages.com/photos/food-background-fresh-vegetables-on-black-top-view-picture-id627250646?b=1&k=6&m=627250646&s=612x612&w=0&h=p9lMZUVCMcL6NsxgTwo7KTK2-ArjvIukvPqX5MpY__A=" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="Area">Area</label>
+        <select id="area" name="area">
+          <option value="Langata">Langata</option>
+          <option value="SouthB">South B</option>
+          <option value="SouthC">South C</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+<footer>
+    Thank you for visiting BOKE BITES, where taste is passion.
+</footer>
+</body>
+</html>
