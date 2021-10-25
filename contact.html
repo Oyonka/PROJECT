@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-<title>]about</title>
+<title> CONTACT FORM DESIGN</title>
 <style>
 body {
 margin: 0px;
 padding: 0px;
 box-sizing: border-box;
 height: 100vh;
+font-family: cursive;
 }
 
 .main {
@@ -51,66 +49,63 @@ color: salmon;
 }
 
 .header {
-background-color: oldlace;
+background-image: url("https://th.bing.com/th/id/R.5e2fd265588293c43b3deaaf785e08de?rik=K3MapA6t1ZRmOg&pid=ImgRaw&r=0");
 background-position: center;
 background-size: cover;
 background-repeat: no repeat;
 height: 100vh;
 }
-* {
-  box-sizing: border-box;
+
+.contact-title {
+margin-top: 100px;
+color: mistyrose;
+text-transform: uppercase;
+transition: all 4s ease-in-out;
 }
 
-/* Style inputs */
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+. contact-title h1 {
+font-size: 32px;
+line-height: 10px;
 }
 
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
+. contact-title h2 {
+font-size: 16px;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+form {
+margin-top: 50px;
+transition: all 4s ease-in-out;
 }
 
-/* Style the container/contact section */
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 10px;
+.form-control {
+width: 600px;
+background: transparent;
+border: none;
+outline: none;
+border-bottom: 1px solid gray;
+color: mistyrose;
+font-size: 18px;
+margin-bottom: 16px;
 }
 
-/* Create two columns that float next to eachother */
-.column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
+input {
+height: 45px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+form .submit {
+background: #ff5722;
+border-color: transparent;
+color: black;
+font-size: 20px;
+font-weight: bold;
+letter-spacing: 2px;
+height: 50px;
+margin-top: 20px;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
+form .submit: hover {
+background-color: #f44336;
+cursor: pointer;
 }
 footer{
     background: #1A2421;
@@ -128,6 +123,31 @@ right: 0;
 </style>
 </head>
 <body>
+<?php
+$name = $_POST['name'];
+$phonenumber=$_POST['phonenumber'];
+$visitor_email = $_POST['email'];
+$message = $_POST['message'];
+
+$email_from = 'ukuthiboke@gmail.com';
+
+$email_subject = "New Form Submission";
+
+$email_body = "User Name: $name.\n".
+              "User Name: $phonenumber.\n".
+              "User Email: $visitor_email.\n".
+              "User Message: $message.\n".
+
+$to = "ukuthiboke@gmail.com";
+
+$headers = "From: $email_from \r\n";
+
+$headers = "Reply-To: $visitor_email \r\n";
+
+mail($to,$email_subject,$email_body,$headers);
+
+header("Location: indo.html");
+?>
 <div class="main">
  <div class="wrapper">
   <div class="header">
@@ -142,33 +162,23 @@ right: 0;
       <li><a href="https://oyonka.github.io/PROJECT/contact.html">CONTACT</a></li>
      </ul>
     </nav>
-<div class="container">
-  <div style="text-align:center">
-    <h>Contact Us</h>
-    <p>Leave us a message:</p>
-  </div>
-  <div class="row">
-    <div class="column">
-      <img src="https://media.gettyimages.com/photos/food-background-fresh-vegetables-on-black-top-view-picture-id627250646?b=1&k=6&m=627250646&s=612x612&w=0&h=p9lMZUVCMcL6NsxgTwo7KTK2-ArjvIukvPqX5MpY__A=" style="width:100%">
-    </div>
-    <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="Area">Area</label>
-        <select id="area" name="area">
+<div class="contact-title">
+<h1> READY TO SERVE YOU! </h1>
+<h2> LEAVE US A MESSAGE </h2>
+</div>
+<div class="contact-form">
+<form id="contact-form" method="post" actions="contact-form-handler.php">
+<input name="name" type="text" class="form-control" placeholder="Your Name" required> <br>
+<input name="phonenumber" type="text" class="form-control" placeholder="Your Phone Number" required> <br>
+<input name="email" type="email" class="form-control" placeholder="Your Email" required> <br>
+<textarea name="message" class="form-control" placeholder="Message" row="4" required> </textarea> <br>
+<label for="Area" style="color: mistyrose";> AREA </label>
+<select id="area" name="area">
           <option value="Langata">Langata</option>
           <option value="SouthB">South B</option>
-          <option value="SouthC">South C</option>
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-  </div>
+          <option value="SouthC">South C</option> required> </select> <br>
+<input type="submit" class="form-control submit" value="SUBMIT">
+</form>
 </div>
 <footer>
     Thank you for visiting BOKE BITES, where taste is passion.
